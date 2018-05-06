@@ -2,7 +2,8 @@
     width: 100%;
     bottom: 0;
     background-color: yellow;
-    position: absolute;
+    /* position: fixed;
+    margin-left: -10px; */
 }
 ul{
     display: flex;

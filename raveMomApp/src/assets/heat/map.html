@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>EDC Las Vegas Map</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
+</head>
+<body>
+
+<div id='map'></div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiYm93bGVzbnMiLCJhIjoiY2pndHJkdzRiMGdhMTMzbXJwbzczaW11YiJ9.xSUnrE4qmfZSXWg6guyxgg';
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/dark-v9',
+    center: [-115.010276, 36.272285],
+    zoom: 14.75
+});
+
+map.on('load', function () {
+
+    map.addLayer({
+        "id": "points",
+        "type": "symbol",
+        "source": {
+            "type": "geojson",
+            "data": {
+              "type": "FeatureCollection",
+              "features": [
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "name": "Cosmic Meadow",
+                    "title": "Cosmic Meadow",
+                    "marker-color": "#0000ff"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                      -115.01206200000000,
+                      36.27393900000000
+                    ]
+                  }
+                },
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "name": "Kinectic Field",
+                    "title": "Kinectic Field",
+                    "marker-color": "#0000ff"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                      -115.006859,
+                      36.274769
+                    ]
+                  }
+                },
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "name": "Circuit Grounds",
+                    "title": "Circuit Grounds",
+                    "marker-color": "#0000ff"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                      -115.012835,
+                      36.269410
+                    ]
+                  }
+                },
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "name": "Neon Garden",
+                    "title": "Neon Garden",
+                    "marker-color": "#ff0000"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                      -115.012758,
+                      36.271927
+                    ]
+                  }
+                },
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "name": "Basspod",
+                    "title": "Basspod",
+                    "marker-color": "#0000ff",
+                    "line": "blue"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                      -115.010281,
+                      36.270249
+                    ]
+                  }
+                },
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "name": "Wasteland",
+                    "title": "Wasteland",
+                    "marker-color": "#ff0000"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                      -115.008007,
+                      36.271520
+                    ]
+                  }
+                },
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "name": "Quantum Valley",
+                    "title": "Quantum Valley",
+                    "marker-color": "#ff0000"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                      -115.009979,
+                      36.274019
+                    ]
+                  }
+                },
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "name": "water",
+                    "title": "water",
+                    "marker-color": "#ff0000",
+                    "icon": "water"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                      -115.011652,
+                      36.271416
+                    ]
+                  }
+                },
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "name": "water",
+                    "title": "water",
+                    "marker-color": "#ff0000",
+                    "icon": "water"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                      -115.009238,
+                      36.272904
+                    ]
+                  }
+                }
+
+              ]
+            }
+        },
+        "layout": {
+            "icon-image": "{icon}-15",
+            "text-field": "{title}",
+            "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
+            "text-offset": [0, 0.5],
+            "text-anchor": "top"
+        }
+    });
+
+    map.addSource('users', {
+        "type": "geojson",
+        "data": "http://34.239.104.74//user.geojson"
+
+    });
+
+    map.addLayer({
+        "id": "users-heat",
+        "type": "heatmap",
+        "source": "users",
+        "maxzoom": 24,
+        "paint": {
+            // Adjust the heatmap radius by zoom level
+            "heatmap-radius": [
+                "interpolate",
+                ["linear"],
+                ["zoom"],
+                0, 2,
+                9, 20,
+                18,30
+            ]
+        }
+    }, 'waterway-label');
+
+
+    map.addLayer({
+      id: 'users-point',
+      type: 'circle',
+      source: 'users',
+      minzoom: 14,
+      paint: {
+        // increase the radius of the circle as the zoom level and dbh value increases
+        'circle-radius': {
+          property: 'dbh',
+          type: 'exponential',
+          stops: [
+            [{ zoom: 15, value: 1 }, 5],
+            [{ zoom: 15, value: 62 }, 10],
+            [{ zoom: 22, value: 1 }, 20],
+            [{ zoom: 22, value: 62 }, 50],
+          ]
+        },
+        'circle-color': {
+          property: 'dbh',
+          type: 'exponential',
+          stops: [
+            [0, 'rgba(236,222,239,0)'],
+            [1, 'rgb(236,222,239)'],
+            [2, 'rgb(208,209,230)'],
+            [3, 'rgb(166,189,219)'],
+            [4, 'rgb(103,169,207)'],
+            [5, 'rgb(28,144,153)'],
+            [6, 'rgb(1,108,89)']
+          ]
+        },
+        'circle-stroke-color': 'white',
+        'circle-stroke-width': 1,
+        'circle-opacity': {
+          stops: [
+            [14, 0],
+            [15, 1]
+          ]
+        }
+      }
+    }, 'waterway-label');
+
+});
+</script>
+
+</body>
+</html>

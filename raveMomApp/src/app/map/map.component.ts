@@ -22,6 +22,16 @@ export class MapComponent implements OnInit {
       console.log(data);
     })
   }
+
+  showKey(){
+    console.log('Showing the Key');
+    let key = document.getElementById('map-key');
+    if(key.style.display == 'none'){
+      key.style.display = 'block';
+    }else{
+      key.style.display = "none";
+    }
+  }
   
 
 }
