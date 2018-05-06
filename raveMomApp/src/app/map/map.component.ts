@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ApiHttpService } from '../api-http.service';
-import { SSL_OP_NO_TICKET } from 'constants';
 
 
 @Component({

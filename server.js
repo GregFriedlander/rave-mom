@@ -294,7 +294,7 @@ app.delete('/api/users/:id', function(req, res) {
 });
 
 app.all('*', (req, res, next)=> {
-    res.sendFile(path.resolve('./productsApp/dist/index.html'));
+    res.sendFile(path.resolve('./raveMomApp/dist/index.html'));
 });
 
 
