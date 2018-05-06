@@ -39,6 +39,13 @@ li{
     // } */
 }
 
+element.style.SOS {
+    width: 400px;
+    /* justify-content: center; */
+    text-align: center;
+    display: block;
+}
+
 /* Change the color of links on hover */
 .navbar a:hover {
     background-color: #ddd;

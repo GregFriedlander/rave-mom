@@ -32,6 +32,12 @@ export class MapComponent implements OnInit {
       key.style.display = "none";
     }
   }
+
+  // var totalTime
+
+  // getRouteTime(){
+
+  // }
   
 
 }
