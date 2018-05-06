@@ -20,8 +20,7 @@
       "prefix": "app",
       "styles": [
         "styles.css",
-        "../node_modules/mapbox-gl/dist/mapbox-gl.css",
-        "../node_modules/mapbox-gl-geocoder/lib/mapbox-gl-geocoder.css"
+        "../node_modules/mapbox-gl/dist/mapbox-gl.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
