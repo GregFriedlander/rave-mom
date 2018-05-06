@@ -1,0 +1,18 @@
+mgl-map {
+    height: 500px;
+    width: 100%;
+}
+#map {
+    height: 500px;
+    width: 100%;
+}
+.marker{
+  font-weight: bold;
+  font-size: 15px;
+}
+/* .qv{
+  margin-bottom: 2px;
+} */
+.cm{
+  transform: rotate(-45deg);
+}

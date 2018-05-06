@@ -1,3 +1,97 @@
-<p>
-  map works!
-</p>
+<mgl-map id="map" [style]="'mapbox://styles/mapbox/dark-v9'" [zoom]="[15]" [center]="[-115.010276, 36.272285]">
+
+  <!-- <mgl-geojson-source
+  id="points"
+  [data]='
+    "type": "Feature",
+    "properties": {
+      "name": "Cosmic Meadow",
+      "title": "Cosmic Meadow",
+      "marker-color": "#0000ff"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -115.01206200000000,
+        36.27393900000000
+      ]
+    }
+  '
+  >
+
+  <mgl-feature
+  [geometry]='
+  {
+    "type": "Point",
+    "coordinates": [
+      -115.01206200000000,
+      36.27393900000000
+    ]
+  }
+  '
+  [properties] ='
+  {
+    "name": "Cosmic Meadow",
+    "title": "Cosmic Meadow",
+    "marker-color": "#0000ff"
+  }
+  '
+  >
+
+  </mgl-feature>
+
+
+  </mgl-geojson-source> -->
+  <mgl-marker 
+  [lngLat]="[ -115.01206200000000,
+  36.27393900000000]"
+  >
+  <div class="marker cm">Cosmic Meadow</div>
+  </mgl-marker>
+
+  <mgl-marker 
+  [lngLat]="[-115.006859,
+  36.274769]"
+  >
+  <div class="marker">Kinectic Field</div>
+  </mgl-marker>
+
+  <mgl-marker 
+  [lngLat]="[-115.012835,
+  36.269410]"
+  >
+  <div class="marker">Circuit Grounds</div>
+  </mgl-marker>
+
+  <mgl-marker 
+  [lngLat]="[-115.012758,
+  36.271927]"
+  >
+  <div class="marker">Neon Garden</div>
+  </mgl-marker>
+
+  <mgl-marker 
+  [lngLat]="[-115.010281,
+  36.270249]"
+  >
+  <div class="marker">Basspod</div>
+  </mgl-marker>
+
+  <mgl-marker 
+  [lngLat]="[-115.008007,
+  36.271520]"
+  >
+  <div class="marker">Wasteland</div>
+  </mgl-marker>
+
+  <mgl-marker 
+  [lngLat]="[-115.009979,
+  36.274019]"
+  >
+  <div class="marker qv">Quantum Valley</div>
+  </mgl-marker>
+ 
+  
+
+
+</mgl-map>
