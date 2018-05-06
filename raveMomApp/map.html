@@ -186,7 +186,7 @@ map.on('load', function () {
 
     map.addSource('users', {
         "type": "geojson",
-        "data": "http://34.239.104.74//user.geojson"
+        "data": "http://34.239.104.74/user.geojson"
 
     });
 
@@ -194,7 +194,7 @@ map.on('load', function () {
         "id": "users-heat",
         "type": "heatmap",
         "source": "users",
-        "maxzoom": 15,
+        "maxzoom": 24,
         "paint": {
             // Adjust the heatmap radius by zoom level
             "heatmap-radius": [
