@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ApiHttpService } from '../api-http.service';
+import { SSL_OP_NO_TICKET } from 'constants';
 
 
 @Component({
@@ -21,6 +22,16 @@ export class MapComponent implements OnInit {
     observable.subscribe((data:any)=>{
       console.log(data);
     })
+  }
+
+  showKey(){
+    console.log('Showing the Key');
+    let key = document.getElementById('map-key');
+    if(key.style.display == 'none'){
+      key.style.display = 'block';
+    }else{
+      key.style.display = "none";
+    }
   }
   
 

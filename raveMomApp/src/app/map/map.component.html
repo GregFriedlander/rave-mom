@@ -19,9 +19,13 @@
 
   <div class="mapcontainer">
 
-      <input class="menubutton" type="image" src="https://i.imgur.com/YNFPQVv.png" alt="menu" style="border-radius: 50%" height="50" width="50"/> 
+      <div>
+        <iframe src="../../assets/heat/map.html" frameborder="0" height="500px" width="100%"></iframe>
+      </div>
 
-      <mgl-map id="map" [style]="'mapbox://styles/mapbox/dark-v9'" [zoom]="[15]" [center]="[-115.010276, 36.272285]">
+      <!-- <input class="menubutton" type="image" src="https://i.imgur.com/YNFPQVv.png" alt="menu" style="border-radius: 50%" height="50" width="50"/>  -->
+
+      <!-- <mgl-map id="map" [style]="'mapbox://styles/mapbox/dark-v9'" [zoom]="[15]" [center]="[-115.010276, 36.272285]">
 
         <mgl-marker 
         [lngLat]="[ -115.01206200000000,
@@ -71,11 +75,19 @@
         >
         <div class="marker qv">Quantum Valley</div>
         </mgl-marker>
-       
-        
+             
       
+      </mgl-map> -->
+
+      <div id="map-key">
+        <p>Green = Friends</p>
+        <p>Blue = Stages</p>
+        <p>Yellow = Bathrooms</p>
+        <p>Orange = Food</p>
+      </div>
+
+      <input (click)="showKey()"  id="menubtn" class="menubutton" type="image" src="https://i.imgur.com/YNFPQVv.png" alt="menu" style="border-radius: 50%" height="50" width="50"/> 
       
-      </mgl-map>
   </div>   
 
 </div>
