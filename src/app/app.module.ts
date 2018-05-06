@@ -10,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import { SosComponent } from './sos/sos.component';
 import { MapComponent } from './map/map.component';
 import { PlurtifyComponent } from './plurtify/plurtify.component';
+import { GeoJSONSourceComponent } from '../../node_modules/ngx-mapbox-gl/app/lib/source/geojson/geojson-source.component';
 
 
 @NgModule({
