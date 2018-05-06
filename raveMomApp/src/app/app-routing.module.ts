@@ -6,6 +6,8 @@ import { FooterComponent } from './footer/footer.component';
 import { MapComponent } from './map/map.component';
 import { SosComponent } from './sos/sos.component';
 import { PlurtifyComponent } from './plurtify/plurtify.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { FriendlistComponent } from './friendlist/friendlist.component';
  
 const routes: Routes = [
     {
@@ -19,6 +21,14 @@ const routes: Routes = [
     {
         path: 'party',
         component: PlurtifyComponent
+    },
+    {
+        path: 'userprofile',
+        component: UserProfileComponent
+    },
+    {
+        path: 'friendlist',
+        component: FriendlistComponent
     },
 ]
 
