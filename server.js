@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const path = require('path');
 const app = express();
 const session = require('express-session');
 
@@ -12,6 +13,7 @@ app.use(session({
   }));
 
 app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, './raveMomApp', '/dist')));
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/raveMomApi');
 
@@ -33,9 +35,9 @@ mongoose.model('Coords', CoordsSchema);
 var User = mongoose.model('User');
 var Coords = mongoose.model('Coords');
 
-app.get('/', function(req, res) {
-    // 
-});
+// app.get('/', function(req, res) {
+//     // 
+// });
 
 app.post('/register', function(req, res) {
     var user = new User(req.body);
@@ -290,6 +292,11 @@ app.delete('/api/users/:id', function(req, res) {
         }
     })
 });
+
+app.all('*', (req, res, next)=> {
+    res.sendFile(path.resolve('./productsApp/dist/index.html'));
+});
+
 
 app.listen(8000, function(){
     console.log('listening on port 8000')
