@@ -1,0 +1,55 @@
+.UserProfile-Container {
+    width: 420px;
+    height: 500px;
+    border-top: 5px solid #000100;
+    display: flex;
+    flex-flow: wrap;
+    background-color: #7AE7C7;
+    padding-top: 30%;
+  }
+  
+  .Profile-pic {
+    margin-top: 1.2%;
+    border-radius: 50%;
+    padding-top: .2%;
+    box-shadow: 2px 2px 4px #000000;
+  
+  }
+  
+  
+  .UserIcon-wrapper {
+    text-align: right;
+    width: 120px;
+    /* // padding-left: 10%; */
+    padding-top: 13.7%;
+    /* // margin-left: 10%; */
+  
+  }
+  
+  .Icon-pic {
+    margin-right: 1%;
+    margin-left: 10%;
+   
+  }
+  
+  .userh2 {
+    font-size: 2px;
+    width: 150px;
+    height: 100px;
+    padding-top: 3%;
+    padding-left: 5%;
+  }
+  
+  p {
+    width: 150px;
+    font-size: 70%;
+    font-family: 'Roboto', sans-serif
+  }
+  
+  .Userh4 {  
+    width: 150px;
+    height: 100px;
+    font-size: 25px;
+    padding-top: 3%;
+    padding-left: 5%;
+  }

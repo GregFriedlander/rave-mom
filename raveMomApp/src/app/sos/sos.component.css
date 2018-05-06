@@ -1,0 +1,22 @@
+input {
+    position: relative;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    /* padding-left: 5%; */
+    /* max-width: 350px; */
+    border-radius: 50%;
+    /* max-height: 350px; */
+    padding-top: 24%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .SOS-Container {
+    height: 600px;
+    background-color: #7AE7C7;
+  }
+
+  h4{
+    text-align: center;
+    font-size: 25px;
+  }

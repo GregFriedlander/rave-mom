@@ -15,6 +15,8 @@ import { PlurtifyComponent } from './plurtify/plurtify.component';
 import { GeoJSONSourceComponent } from '../../node_modules/ngx-mapbox-gl/app/lib/source/geojson/geojson-source.component';
 
 import { ApiHttpService } from './api-http.service';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { FriendlistComponent } from './friendlist/friendlist.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { ApiHttpService } from './api-http.service';
     FooterComponent,
     SosComponent,
     MapComponent,
-    PlurtifyComponent
+    PlurtifyComponent,
+    UserProfileComponent,
+    FriendlistComponent
   ],
   imports: [
     BrowserModule,
