@@ -12,6 +12,10 @@ export class MapComponent implements OnInit {
 
   constructor(public service: ApiHttpService) { }
 
+  firstHTML;
+  secondHTML;
+  time;
+
   ngOnInit() {
     this.getUserData();
   }
@@ -39,5 +43,9 @@ export class MapComponent implements OnInit {
 
   // }
   
+  showTime() {
+    console.log('clicked');
+    this.time = "12 minutes away"
+  }
 
 }
