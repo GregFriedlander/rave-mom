@@ -1,0 +1,13 @@
+#footer{
+    width: 100%;
+    bottom: 0;
+    background-color: yellow;
+}
+ul{
+    display: flex;
+    justify-content: space-evenly;
+}
+li{
+    list-style-type: none;
+    display: inline;
+}
